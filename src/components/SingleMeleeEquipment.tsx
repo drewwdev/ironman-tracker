@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import type { meleeEquipmentType } from "../types/meleeEquipmentType";
 import meleeEquipment from "../data/meleeEquipment";
+import { meleeEquipmentType } from "../types/meleeEquipmentType";
 
-function Achieved() {
+function SingleMeleeEquipment() {
   const [meleeEquipmentState, setMeleeEquipmentState] =
     useState<meleeEquipmentType[]>(meleeEquipment);
 
@@ -25,20 +25,26 @@ function Achieved() {
   }, []);
 
   return (
-    <div>
-      <li>Achieved</li>
+    <tbody>
       {meleeEquipment.map((meleeEquipment: meleeEquipmentType) => (
-        <li key={meleeEquipment.id} className="flex items-center mb-4">
-          <input
-            type="checkbox"
-            id={meleeEquipment.id.toString()}
-            checked={meleeEquipmentState[meleeEquipment.id - 1].achieved}
-            onChange={handleCheckbox}
-          />
-        </li>
+        <tr key={meleeEquipment.id}>
+          <td className="flex justify-center px-4">
+            <img src={meleeEquipment.image} />
+          </td>
+          <td className="px-4">{meleeEquipment.tier}</td>
+          <td className="px-4">{meleeEquipment.name}</td>
+          <td className="px-4">
+            <input
+              type="checkbox"
+              id={meleeEquipment.id.toString()}
+              checked={meleeEquipmentState[meleeEquipment.id - 1].achieved}
+              onChange={handleCheckbox}
+            />
+          </td>
+        </tr>
       ))}
-    </div>
+    </tbody>
   );
 }
 
-export default Achieved;
+export default SingleMeleeEquipment;
