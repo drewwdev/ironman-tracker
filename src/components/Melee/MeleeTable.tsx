@@ -11,9 +11,9 @@ function MeleeTable() {
         <thead>
           <tr>
             <th></th>
-            <th className="flex justify-start px-4 ">Tier</th>
-            <th className="flex justify-start px-4">Item</th>
-            <th className="px-4 ">Achieved?</th>
+            <th className="">Tier</th>
+            <th className="">Item</th>
+            <th className="">Achieved?</th>
           </tr>
         </thead>
         <SingleMeleeEquipment />

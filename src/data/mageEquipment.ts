@@ -81,7 +81,7 @@ const mageEquipment = [
   {
     id: 12,
     image:
-      "https://oldschool.runescape.wiki/images/Ahrim%27s_robe_top.png?c85b3",
+      "https://oldschool.runescape.wiki/images/Ahrim%27s_robetop.png?248b4",
     tier: "B",
     name: "Ahrim's Robetop",
     achieved: false,
@@ -89,7 +89,7 @@ const mageEquipment = [
   {
     id: 13,
     image:
-      "https://oldschool.runescape.wiki/images/Ahrim%27s_robe_skirt.png?c85b3",
+      "https://oldschool.runescape.wiki/images/Ahrim%27s_robeskirt.png?65d4f",
     tier: "B",
     name: "Ahrim's Robeskirt",
 
@@ -104,7 +104,7 @@ const mageEquipment = [
   },
   {
     id: 15,
-    image: "https://oldschool.runescape.wiki/images/Mages%27_book.png?c85b3",
+    image: "https://oldschool.runescape.wiki/images/Mage%27s_book.png?8bd5a",
     tier: "B",
     name: "Mages' Book",
     achieved: false,

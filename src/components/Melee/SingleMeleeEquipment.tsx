@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import meleeEquipment from "../data/meleeEquipment";
-import { meleeEquipmentType } from "../types/meleeEquipmentType";
+import meleeEquipment from "../../data/meleeEquipment";
+import { EquipmentType } from "../../types/equipmentType";
 
 function SingleMeleeEquipment() {
   const [meleeEquipmentState, setMeleeEquipmentState] =
-    useState<meleeEquipmentType[]>(meleeEquipment);
+    useState<EquipmentType[]>(meleeEquipment);
 
   const handleCheckbox = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { id } = e.target;
@@ -24,15 +24,31 @@ function SingleMeleeEquipment() {
     }
   }, []);
 
+  const meleeEquipmentNameSlug = meleeEquipment.map(
+    (meleeEquipment: EquipmentType) =>
+      meleeEquipment.name.toLowerCase().replace("'", "%27").replace(" ", "_")
+  );
+
   return (
     <tbody>
-      {meleeEquipment.map((meleeEquipment: meleeEquipmentType) => (
+      {meleeEquipment.map((meleeEquipment: EquipmentType) => (
         <tr key={meleeEquipment.id}>
           <td className="flex justify-center px-4">
             <img src={meleeEquipment.image} />
           </td>
           <td className="px-4">{meleeEquipment.tier}</td>
-          <td className="px-4">{meleeEquipment.name}</td>
+          <td className="px-4">
+            <a
+              className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+              href={`https://oldschool.runescape.wiki/w/${
+                meleeEquipmentNameSlug[meleeEquipment.id - 1]
+              }`}
+              target="_blank"
+              rel="noreferrer"
+            >
+              {meleeEquipment.name}
+            </a>
+          </td>
           <td className="px-4">
             <input
               type="checkbox"

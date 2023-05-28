@@ -8,7 +8,7 @@ const rangeEquipment = [
   },
   {
     id: 2,
-    image: "https://oldschool.runescape.wiki/images/Archer%27s_ring.png?c85b3",
+    image: "https://oldschool.runescape.wiki/images/Archers_ring.png?c0a17",
     tier: "B",
     name: "Archer's Ring",
     achieved: false,
@@ -154,7 +154,7 @@ const rangeEquipment = [
   {
     id: 22,
     image:
-      "https://oldschool.runescape.wiki/images/Bow_of_Faerdhinen.png?c85b3",
+      "https://oldschool.runescape.wiki/images/Bow_of_faerdhinen.png?3d026",
     tier: "S",
     name: "Bow of Faerdhinen",
     achieved: false,
