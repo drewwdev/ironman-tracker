@@ -1,15 +1,18 @@
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import MageTable from "./components/Mage/MageTable";
-import MeleeTable from "./components/Melee/MeleeTable";
-import RangeTable from "./components/Range/RangeTable";
+import Navbar from "./components/Navbar";
+import EquipmentChecklist from "./pages/EquipmentChecklist";
 
 function App() {
   return (
-    <div className="flex">
-      <MeleeTable />
-      <MageTable />
-      <RangeTable />
-    </div>
+    <>
+      <div className="flex flex-col">
+        <Navbar />
+        <Routes>
+          <Route path="/EquipmentChecklist" element={<EquipmentChecklist />} />
+        </Routes>
+      </div>
+    </>
   );
 }
 
