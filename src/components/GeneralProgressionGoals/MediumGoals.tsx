@@ -1,125 +1,140 @@
 import { useEffect, useState } from "react";
 
-function EasyGoals() {
+function MediumGoals() {
   const goals = [
     {
       id: 1,
-      name: "Graceful Set",
+      name: "Dragon Scimitar",
       achieved: false,
     },
     {
       id: 2,
-      name: "Fairy Rings + Magic Secateurs",
+      name: "Dragon Battleaxe",
       achieved: false,
     },
     {
       id: 3,
-      name: "Easy Ardougne Diary",
+      name: "Salve Amulet",
       achieved: false,
     },
     {
       id: 4,
-      name: "100% Hosidius Favour",
+      name: "Fighter Torso",
       achieved: false,
     },
     {
       id: 5,
-      name: "Birdhouse Runs",
+      name: "Prayer Potions",
       achieved: false,
     },
     {
       id: 6,
-      name: "Dorgeshuun Crossbow",
+      name: "Black Mask",
       achieved: false,
     },
     {
       id: 7,
-      name: "Climbing Boots",
+      name: "Rune Crossbow",
       achieved: false,
     },
     {
       id: 8,
-      name: "Elemental/Mind Shield",
+      name: "Proselyte Armour",
       achieved: false,
     },
     {
       id: 9,
-      name: "Ava's Attractor",
+      name: "Magic Shortbow",
       achieved: false,
     },
     {
       id: 10,
-      name: "43 Prayer",
+      name: "Dragon Defender",
       achieved: false,
     },
     {
       id: 11,
-      name: "Free-to-Play Quests",
+      name: "Helmet of Neitiznot",
       achieved: false,
     },
     {
       id: 12,
-      name: "High Alchemy",
+      name: "Full Void Armour",
       achieved: false,
     },
     {
       id: 13,
-      name: "Alfred Grimhand's Barcrawl",
+      name: "Broad Bolts",
       achieved: false,
     },
     {
       id: 14,
-      name: "Strength Amulet(s)",
+      name: "Barrows Gloves",
       achieved: false,
     },
     {
       id: 15,
-      name: "Fremmenik Trials",
+      name: "Ancients Unlocked",
       achieved: false,
     },
     {
       id: 16,
-      name: "Iban's Staff",
+      name: "Medium Clue Stash Units",
       achieved: false,
     },
     {
       id: 17,
-      name: "Farm Run Teleports:",
+      name: "Herb Sack",
       achieved: false,
     },
     {
       id: 18,
-      name: " - Ardougne Cloak 2",
+      name: "Amulet of Glory(s)",
       achieved: false,
     },
     {
       id: 19,
-      name: " - Camelot Teleport",
+      name: "Angler's Outfit",
       achieved: false,
     },
     {
       id: 20,
-      name: " - Explorer's Ring 2",
+      name: "Lumberjack Outfit",
       achieved: false,
     },
     {
       id: 21,
-      name: " - Kourend House Teleport",
+      name: "All Medium Diaries Completed",
       achieved: false,
     },
     {
       id: 22,
-      name: " - Ectophial",
+      name: "Ectoplasmator (optional)",
       achieved: false,
     },
     {
       id: 23,
-      name: " - Farming Guild",
+      name: "Holy Wrench",
       achieved: false,
     },
     {
       id: 24,
-      name: " - Trollheim Teleport",
+      name: "Bone Crusher",
+      achieved: false,
+    },
+    {
+      id: 25,
+      name: "55 Construction",
+      achieved: false,
+    },
+    {
+      id: 26,
+      name: "Karambwan Fishing",
+      achieved: false,
+    },
+    {
+      id: 27,
+      name: "Ava's Accumulator",
       achieved: false,
     },
   ];
@@ -130,23 +145,23 @@ function EasyGoals() {
     achieved: boolean;
   };
 
-  const [easyGoalsState, setEasyGoalsState] = useState<GoalType[]>(goals);
+  const [mediumGoalsState, setMediumGoalsState] = useState<GoalType[]>(goals);
 
   const handleCheckbox = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { id } = e.target;
-    const index = easyGoalsState.findIndex(
-      (easyGoals) => easyGoals.id === parseInt(id)
+    const index = mediumGoalsState.findIndex(
+      (mediumGoals) => mediumGoals.id === parseInt(id)
     );
-    const newEasyGoals = [...easyGoalsState];
-    newEasyGoals[index].achieved = !newEasyGoals[index].achieved;
-    setEasyGoalsState(newEasyGoals);
-    localStorage.setItem("easyGoals", JSON.stringify(newEasyGoals));
+    const newMediumGoals = [...mediumGoalsState];
+    newMediumGoals[index].achieved = !newMediumGoals[index].achieved;
+    setMediumGoalsState(newMediumGoals);
+    localStorage.setItem("mediumGoals", JSON.stringify(newMediumGoals));
   };
 
   useEffect(() => {
-    const easyGoals = localStorage.getItem("easyGoals");
-    if (easyGoals) {
-      setEasyGoalsState(JSON.parse(easyGoals));
+    const mediumGoals = localStorage.getItem("mediumGoals");
+    if (mediumGoals) {
+      setMediumGoalsState(JSON.parse(mediumGoals));
     }
   }, []);
 
@@ -167,7 +182,7 @@ function EasyGoals() {
                 <input
                   type="checkbox"
                   id={goal.id.toString()}
-                  checked={easyGoalsState[goal.id - 1].achieved}
+                  checked={mediumGoalsState[goal.id - 1].achieved}
                   onChange={handleCheckbox}
                 />
               </td>
@@ -179,4 +194,4 @@ function EasyGoals() {
   );
 }
 
-export default EasyGoals;
+export default MediumGoals;
