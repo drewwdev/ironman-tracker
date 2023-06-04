@@ -1,11 +1,11 @@
-import SingleMeleeEquipment from "./SingleMeleeEquipment";
+import SingleRangeEquipment from "./SingleRangeEquipment";
 
-function MeleeTable() {
+function RangeTable() {
   return (
-    <section className="m-6 border-2">
+    <section className="m-6 border-2 bg-zinc-700">
       <header className="flex flex-col items-center justify-center">
-        <h1>Melee</h1>
-        <img src="https://oldschool.runescape.wiki/images/Strength_icon_%28detail%29.png?a4903" />
+        <h1>Range</h1>
+        <img src="https://oldschool.runescape.wiki/images/Ranged_icon.png?01b0e" />
       </header>
       <table>
         <thead>
@@ -16,10 +16,10 @@ function MeleeTable() {
             <th className="">Achieved?</th>
           </tr>
         </thead>
-        <SingleMeleeEquipment />
+        <SingleRangeEquipment />
       </table>
     </section>
   );
 }
 
-export default MeleeTable;
+export default RangeTable;

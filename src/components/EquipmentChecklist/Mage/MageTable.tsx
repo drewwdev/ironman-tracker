@@ -1,11 +1,11 @@
-import SingleRangeEquipment from "./SingleRangeEquipment";
+import SingleMageEquipment from "./SingleMageEquipment";
 
-function RangeTable() {
+function MageTable() {
   return (
-    <section className="m-6 border-2">
+    <section className="m-6 border-2 bg-zinc-700">
       <header className="flex flex-col items-center justify-center">
-        <h1>Range</h1>
-        <img src="https://oldschool.runescape.wiki/images/Ranged_icon.png?01b0e" />
+        <h1>Mage</h1>
+        <img src="https://oldschool.runescape.wiki/images/Magic_icon_%28detail%29.png?a4903" />
       </header>
       <table>
         <thead>
@@ -16,10 +16,10 @@ function RangeTable() {
             <th className="">Achieved?</th>
           </tr>
         </thead>
-        <SingleRangeEquipment />
+        <SingleMageEquipment />
       </table>
     </section>
   );
 }
 
-export default RangeTable;
+export default MageTable;

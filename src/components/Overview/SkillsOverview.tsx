@@ -28,7 +28,7 @@ function SkillsOverview() {
   }, []);
 
   return (
-    <table className="m-6 border-2">
+    <table className="m-6 border-2 bg-zinc-700">
       <thead>
         <tr>
           <th>Skill</th>

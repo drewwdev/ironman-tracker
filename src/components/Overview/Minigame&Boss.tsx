@@ -46,7 +46,7 @@ function MinigameAndBoss() {
   };
 
   return (
-    <table className="m-6 border-2">
+    <table className="m-6 border-2 bg-zinc-700">
       <thead>
         <tr>
           <th>Minigame / Boss</th>

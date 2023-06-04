@@ -1,8 +1,8 @@
-import MageTable from "../components/Mage/MageTable";
-import MeleeTable from "../components/Melee/MeleeTable";
-import RangeTable from "../components/Range/RangeTable";
+import MageTable from "../components/EquipmentChecklist/Mage/MageTable";
+import MeleeTable from "../components/EquipmentChecklist/Melee/MeleeTable";
+import RangeTable from "../components/EquipmentChecklist/Range/RangeTable";
 
-const EquipmentChecklist = () => {
+function EquipmentChecklist() {
   return (
     <div className="flex pt-24">
       <MeleeTable />
@@ -10,6 +10,6 @@ const EquipmentChecklist = () => {
       <RangeTable />
     </div>
   );
-};
+}
 
 export default EquipmentChecklist;
