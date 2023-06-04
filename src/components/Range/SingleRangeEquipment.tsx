@@ -39,7 +39,7 @@ function SingleRangeEquipment() {
           <td className="px-4">{rangeEquipment.tier}</td>
           <td className="px-4">
             <a
-              className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+              className="font-medium text-slate-200 hover:text-slate-200 hover:underline"
               href={`https://oldschool.runescape.wiki/w/${
                 rangeEquipmentNameSlug[rangeEquipment.id - 1]
               }`}

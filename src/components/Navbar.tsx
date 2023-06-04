@@ -15,12 +15,12 @@ const navbarItems = [
 
 function Navbar() {
   return (
-    <nav className="absolute top-0 bg-zinc-800">
+    <nav className="absolute top-0 bg-zinc-700">
       <ul className="flex justify-center">
         {navbarItems.map((navbarItem) => (
           <Link
             key={navbarItem.text}
-            className="px-4 py-8 font-medium text-blue-600 hover:bg-slate-400 dark:text-blue-500"
+            className="px-4 py-8 font-medium text-slate-200 hover:bg-slate-400 hover:text-zinc-700"
             to={navbarItem.path}
           >
             <li>{navbarItem.text}</li>
