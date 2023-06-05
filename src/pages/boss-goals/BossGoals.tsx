@@ -1,4 +1,4 @@
-import BarrowsBossGoals from "../components/BossGoals/BarrowsBossGoals";
+import BarrowsBossGoals from "./components/BarrowsBossGoals";
 
 function BossGoals() {
   return (

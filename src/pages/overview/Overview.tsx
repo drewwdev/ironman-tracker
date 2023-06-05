@@ -1,5 +1,5 @@
-import MinigameAndBoss from "../components/Overview/Minigame&Boss";
-import SkillsOverview from "../components/Overview/SkillsOverview";
+import MinigameAndBoss from "./components/Minigame&Boss";
+import SkillsOverview from "./components/SkillsOverview";
 
 function Overview() {
   return (
