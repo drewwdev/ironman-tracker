@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import EquipmentChecklist from "./pages/EquipmentChecklist";
 import Overview from "./pages/Overview";
 import GeneralProgressionGoals from "./pages/GeneralProgressionGoals";
+import BossGoals from "./pages/BossGoals";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
             path="/GeneralProgressionGoals"
             element={<GeneralProgressionGoals />}
           />
+          <Route path="/BossGoals" element={<BossGoals />} />
         </Routes>
       </div>
     </>
