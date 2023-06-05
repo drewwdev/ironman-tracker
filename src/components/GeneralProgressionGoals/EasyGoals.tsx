@@ -150,8 +150,20 @@ function EasyGoals() {
     }
   }, []);
 
+  const percentageOfEasyGoalsAchieved = () => {
+    const totalEasyGoals = easyGoalsState.length;
+    const totalEasyGoalsAchieved = easyGoalsState.filter(
+      (easyGoals) => easyGoals.achieved
+    ).length;
+    return Math.round((totalEasyGoalsAchieved / totalEasyGoals) * 100);
+  };
+
   return (
     <div className="m-6 border-2 bg-zinc-700">
+      <h1 className="text-2xl font-bold text-center">Easy Goals</h1>
+      <h2 className="text-xl font-bold text-center">
+        {percentageOfEasyGoalsAchieved()}% Complete
+      </h2>
       <table>
         <thead>
           <tr>

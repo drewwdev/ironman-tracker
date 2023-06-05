@@ -1,140 +1,145 @@
 import { useEffect, useState } from "react";
 
-function MediumGoals() {
+function HardGoals() {
   const goals = [
     {
       id: 1,
-      name: "Dragon Scimitar",
+      name: "Slayer Helm (i)",
       achieved: false,
     },
     {
       id: 2,
-      name: "Dragon Battleaxe",
+      name: "Elite Void",
       achieved: false,
     },
     {
       id: 3,
-      name: "Salve Amulet",
+      name: "Dragon Boots",
       achieved: false,
     },
     {
       id: 4,
-      name: "Fighter Torso",
+      name: "Abyssal Whip",
       achieved: false,
     },
     {
       id: 5,
-      name: "Prayer Potions",
+      name: "Piety",
       achieved: false,
     },
     {
       id: 6,
-      name: "Black Mask",
+      name: "100% Favour All Houses",
       achieved: false,
     },
     {
       id: 7,
-      name: "Rune Crossbow",
+      name: "Imbued God Cape",
       achieved: false,
     },
     {
       id: 8,
-      name: "Proselyte Armour",
+      name: "Lots of House Tabs",
       achieved: false,
     },
     {
       id: 9,
-      name: "Magic Shortbow",
+      name: "Lunar Spellbook",
       achieved: false,
     },
     {
       id: 10,
-      name: "Dragon Defender",
+      name: "Ranger Boots",
       achieved: false,
     },
     {
       id: 11,
-      name: "Helmet of Neitiznot",
+      name: "Runepouch",
       achieved: false,
     },
     {
       id: 12,
-      name: "Full Void Armour",
+      name: "God D-hide",
       achieved: false,
     },
     {
       id: 13,
-      name: "Broad Bolts",
+      name: "Fire Cape",
       achieved: false,
     },
     {
       id: 14,
-      name: "Barrows Gloves",
+      name: "Lots of Super Sets",
       achieved: false,
     },
     {
       id: 15,
-      name: "Ancients Unlocked",
+      name: "Crystal Shield",
       achieved: false,
     },
     {
       id: 16,
-      name: "Medium Clue Stash Units",
+      name: "Infinity Boots",
       achieved: false,
     },
     {
       id: 17,
-      name: "Herb Sack",
+      name: "All Hard Diaries Completed",
       achieved: false,
     },
     {
       id: 18,
-      name: "Amulet of Glory(s)",
+      name: "Barrows (Necessary sets)",
       achieved: false,
     },
     {
       id: 19,
-      name: "Angler's Outfit",
+      name: "Leaf-bladed Battle Axe",
       achieved: false,
     },
     {
       id: 20,
-      name: "Lumberjack Outfit",
+      name: "Amulet of Fury",
       achieved: false,
     },
     {
       id: 21,
-      name: "All Medium Diaries Completed",
+      name: "Relevant God Books Completed",
       achieved: false,
     },
     {
       id: 22,
-      name: "Ectoplasmator (optional)",
+      name: "Dagannoth Imbued Rings",
       achieved: false,
     },
     {
       id: 23,
-      name: "Holy Wrench",
+      name: "Trident of the Seas",
       achieved: false,
     },
     {
       id: 24,
-      name: "Bone Crusher",
+      name: "Base 85+ Combat Stats",
       achieved: false,
     },
     {
       id: 25,
-      name: "55 Construction",
+      name: "Quest Cape",
       achieved: false,
     },
     {
       id: 26,
-      name: "Karambwan Fishing",
+      name: "Ava's Assembler",
       achieved: false,
     },
     {
       id: 27,
-      name: "Ava's Accumulator",
+      name: "First gauntlet unique",
+      achieved: false,
+    },
+    {
+      id: 28,
+      name: "Dragon sword (COX, Vasa Nistirio)",
       achieved: false,
     },
   ];
@@ -145,41 +150,41 @@ function MediumGoals() {
     achieved: boolean;
   };
 
-  const [mediumGoalsState, setMediumGoalsState] = useState<GoalType[]>(goals);
+  const [hardGoalsState, setHardGoalsState] = useState<GoalType[]>(goals);
 
   const handleCheckbox = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { id } = e.target;
-    const index = mediumGoalsState.findIndex(
-      (mediumGoals) => mediumGoals.id === parseInt(id)
+    const index = hardGoalsState.findIndex(
+      (hardGoals) => hardGoals.id === parseInt(id)
     );
-    const newMediumGoals = [...mediumGoalsState];
-    newMediumGoals[index].achieved = !newMediumGoals[index].achieved;
-    setMediumGoalsState(newMediumGoals);
-    localStorage.setItem("mediumGoals", JSON.stringify(newMediumGoals));
+    const newHardGoals = [...hardGoalsState];
+    newHardGoals[index].achieved = !newHardGoals[index].achieved;
+    setHardGoalsState(newHardGoals);
+    localStorage.setItem("hardGoals", JSON.stringify(newHardGoals));
   };
 
   useEffect(() => {
-    const mediumGoals = localStorage.getItem("mediumGoals");
-    if (mediumGoals) {
-      setMediumGoalsState(JSON.parse(mediumGoals));
+    const hardGoals = localStorage.getItem("hardGoals");
+    if (hardGoals) {
+      setHardGoalsState(JSON.parse(hardGoals));
     }
   }, []);
 
-  const percentageOfMediumGoalsAchieved = () => {
-    const numberOfMediumGoalsAchieved = mediumGoalsState.filter(
-      (mediumGoals) => mediumGoals.achieved
+  const percentageOfhardGoalsAchieved = () => {
+    const numberOfHardGoalsAchieved = hardGoalsState.filter(
+      (hardGoals) => hardGoals.achieved
     ).length;
 
     return Math.floor(
-      (numberOfMediumGoalsAchieved / mediumGoalsState.length) * 100
+      (numberOfHardGoalsAchieved / hardGoalsState.length) * 100
     );
   };
 
   return (
     <div className="m-6 border-2 bg-zinc-700">
-      <h1 className="text-2xl font-bold text-center">Medium Goals</h1>
+      <h1 className="text-2xl font-bold text-center">Hard Goals</h1>
       <h2 className="text-xl font-bold text-center">
-        {percentageOfMediumGoalsAchieved()}% Completed
+        {percentageOfhardGoalsAchieved()}% Completed
       </h2>
       <table>
         <thead>
@@ -196,7 +201,7 @@ function MediumGoals() {
                 <input
                   type="checkbox"
                   id={goal.id.toString()}
-                  checked={mediumGoalsState[goal.id - 1].achieved}
+                  checked={hardGoalsState[goal.id - 1].achieved}
                   onChange={handleCheckbox}
                 />
               </td>
@@ -208,4 +213,4 @@ function MediumGoals() {
   );
 }
 
-export default MediumGoals;
+export default HardGoals;
