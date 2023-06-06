@@ -1,212 +1,9 @@
 import { useEffect, useState } from "react";
-
-const barrowsGear = [
-  {
-    id: 1,
-    name: "Ahrim's Hood",
-    droprate: "1/16.5",
-    killcount: 0,
-    date: "",
-    achieved: false,
-  },
-  {
-    id: 2,
-    name: "Ahrim's Robetop",
-    droprate: "1/16.5",
-    killcount: 0,
-    date: "",
-    achieved: false,
-  },
-  {
-    id: 3,
-    name: "Ahrim's Robeskirt",
-    droprate: "1/16.5",
-    killcount: 0,
-    date: "",
-    achieved: false,
-  },
-  {
-    id: 4,
-    name: "Ahrim's Staff",
-    droprate: "1/16.5",
-    killcount: 0,
-    date: "",
-    achieved: false,
-  },
-  {
-    id: 5,
-    name: "Dharok's Helm",
-    droprate: "1/16.5",
-    killcount: 0,
-    date: "",
-    achieved: false,
-  },
-  {
-    id: 6,
-    name: "Dharok's Platebody",
-    droprate: "1/16.5",
-    killcount: 0,
-    date: "",
-    achieved: false,
-  },
-  {
-    id: 7,
-    name: "Dharok's Platelegs",
-    droprate: "1/16.5",
-    killcount: 0,
-    date: "",
-    achieved: false,
-  },
-  {
-    id: 8,
-    name: "Dharok's Greataxe",
-    droprate: "1/16.5",
-    killcount: 0,
-    date: "",
-    achieved: false,
-  },
-  {
-    id: 9,
-    name: "Guthan's Helm",
-    droprate: "1/16.5",
-    killcount: 0,
-    date: "",
-    achieved: false,
-  },
-  {
-    id: 10,
-    name: "Guthan's Platebody",
-    droprate: "1/16.5",
-    killcount: 0,
-    date: "",
-    achieved: false,
-  },
-  {
-    id: 11,
-    name: "Guthan's Chainskirt",
-    droprate: "1/16.5",
-    killcount: 0,
-    date: "",
-    achieved: false,
-  },
-  {
-    id: 12,
-    name: "Guthan's Warspear",
-    droprate: "1/16.5",
-    killcount: 0,
-    date: "",
-    achieved: false,
-  },
-  {
-    id: 13,
-    name: "Karil's Coif",
-    droprate: "1/16.5",
-    killcount: 0,
-    date: "",
-    achieved: false,
-  },
-  {
-    id: 14,
-    name: "Karil's Leathertop",
-    droprate: "1/16.5",
-    killcount: 0,
-    date: "",
-    achieved: false,
-  },
-  {
-    id: 15,
-    name: "Karil's Leatherskirt",
-    droprate: "1/16.5",
-    killcount: 0,
-    date: "",
-    achieved: false,
-  },
-  {
-    id: 16,
-    name: "Karil's Crossbow",
-    droprate: "1/16.5",
-    killcount: 0,
-    date: "",
-    achieved: false,
-  },
-  {
-    id: 17,
-    name: "Torag's Helm",
-    droprate: "1/16.5",
-    killcount: 0,
-    date: "",
-    achieved: false,
-  },
-  {
-    id: 18,
-    name: "Torag's Platebody",
-    droprate: "1/16.5",
-    killcount: 0,
-    date: "",
-    achieved: false,
-  },
-  {
-    id: 19,
-    name: "Torag's Platelegs",
-    droprate: "1/16.5",
-    killcount: 0,
-    date: "",
-    achieved: false,
-  },
-  {
-    id: 20,
-    name: "Torag's Hammers",
-    droprate: "1/16.5",
-    killcount: 0,
-    date: "",
-    achieved: false,
-  },
-  {
-    id: 21,
-    name: "Verac's Helm",
-    droprate: "1/16.5",
-    killcount: 0,
-    date: "",
-    achieved: false,
-  },
-  {
-    id: 22,
-    name: "Verac's Brassard",
-    droprate: "1/16.5",
-    killcount: 0,
-    date: "",
-    achieved: false,
-  },
-  {
-    id: 23,
-    name: "Verac's Plateskirt",
-    droprate: "1/16.5",
-    killcount: 0,
-    date: "",
-    achieved: false,
-  },
-  {
-    id: 24,
-    name: "Verac's Flail",
-    droprate: "1/16.5",
-    killcount: 0,
-    date: "",
-    achieved: false,
-  },
-];
-
-type barrowsGearType = {
-  id: number;
-  name: string;
-  droprate: string;
-  killcount: number;
-  date: string;
-  achieved: boolean;
-};
+import { barrowsGear } from "../data";
+import { barrowsGearType } from "../model";
+import { BASE_URL } from "../../../constants";
 
 function BarrowsBossGoals() {
-  const BASE_URL = "https://api.wiseoldman.net/v2";
-
   const [player, setPlayer] = useState({
     combatLevel: 0,
     displayName: "",
@@ -224,11 +21,15 @@ function BarrowsBossGoals() {
     },
   });
 
-  useEffect(() => {
-    fetch(`${BASE_URL}/players/misawakawada`)
-      .then((res) => res.json())
-      .then((data) => setPlayer(data));
-  }, []);
+  const GetPlayer = async () => {
+    useEffect(() => {
+      fetch(`${BASE_URL}/players/misawakawada`)
+        .then((res) => res.json())
+        .then((data) => setPlayer(data));
+    }, []);
+  };
+
+  GetPlayer();
 
   const [barrowsGearState, setBarrowsGearState] =
     useState<barrowsGearType[]>(barrowsGear);

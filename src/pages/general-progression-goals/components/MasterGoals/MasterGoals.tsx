@@ -1,25 +1,8 @@
 import { useEffect, useState } from "react";
+import { goals } from "./data";
+import { GoalType } from "../../model";
 
 function MasterGoals() {
-  const goals = [
-    {
-      id: 1,
-      name: "87 Construction (Max house)",
-      achieved: false,
-    },
-    {
-      id: 2,
-      name: "Achievement Diary Cape",
-      achieved: false,
-    },
-  ];
-
-  type GoalType = {
-    id: number;
-    name: string;
-    achieved: boolean;
-  };
-
   const [masterGoalsState, setMasterGoalsState] = useState<GoalType[]>(goals);
 
   const handleCheckbox = (e: React.ChangeEvent<HTMLInputElement>) => {

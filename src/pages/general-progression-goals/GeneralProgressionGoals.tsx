@@ -1,8 +1,8 @@
-import EasyGoals from "./components/EasyGoals";
-import EliteGoals from "./components//EliteGoals";
-import HardGoals from "./components//HardGoals";
-import MasterGoals from "./components//MasterGoals";
-import MediumGoals from "./components//MediumGoals";
+import EasyGoals from "./components/EasyGoals/EasyGoals";
+import EliteGoals from "./components/EliteGoals/EliteGoals";
+import HardGoals from "./components/HardGoals/HardGoals";
+import MasterGoals from "./components/MasterGoals/MasterGoals";
+import MediumGoals from "./components/MediumGoals/MediumGoals";
 
 function GeneralProgressionGoals() {
   return (

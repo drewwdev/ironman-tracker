@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import meleeEquipment from "./meleeEquipment";
-import { EquipmentType } from "../../equipmentType";
+import meleeEquipment from "./data";
+import { EquipmentType } from "../../model";
 
 function SingleMeleeEquipment() {
   const [meleeEquipmentState, setMeleeEquipmentState] =

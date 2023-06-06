@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
+import { BASE_URL } from "../../../constants";
 
 function MinigameAndBoss() {
-  const BASE_URL = "https://api.wiseoldman.net/v2";
-
   const [player, setPlayer] = useState({
     combatLevel: 0,
     displayName: "",

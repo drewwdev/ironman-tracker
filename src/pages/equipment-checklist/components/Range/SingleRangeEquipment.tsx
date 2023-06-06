@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import rangeEquipment from "./rangeEquipment";
-import { EquipmentType } from "../../equipmentType";
+import rangeEquipment from "./data";
+import { EquipmentType } from "../../model";
 
 function SingleRangeEquipment() {
   const [rangeEquipmentState, setRangeEquipmentState] =

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import mageEquipment from "./mageEquipment";
-import { EquipmentType } from "../../equipmentType";
+import mageEquipment from "./data";
+import { EquipmentType } from "../../model";
 
 function SingleMageEquipment() {
   const [mageEquipmentState, setMageEquipmentState] =
