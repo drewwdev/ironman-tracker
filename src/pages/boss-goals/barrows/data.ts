@@ -1,10 +1,9 @@
-export const barrowsGear = [
+export const loot = [
   {
     id: 1,
     name: "Ahrim's Hood",
     droprate: "1/16.5",
     killcount: 0,
-    date: "",
     achieved: false,
   },
   {
@@ -12,7 +11,6 @@ export const barrowsGear = [
     name: "Ahrim's Robetop",
     droprate: "1/16.5",
     killcount: 0,
-    date: "",
     achieved: false,
   },
   {
@@ -20,7 +18,6 @@ export const barrowsGear = [
     name: "Ahrim's Robeskirt",
     droprate: "1/16.5",
     killcount: 0,
-    date: "",
     achieved: false,
   },
   {
@@ -28,7 +25,6 @@ export const barrowsGear = [
     name: "Ahrim's Staff",
     droprate: "1/16.5",
     killcount: 0,
-    date: "",
     achieved: false,
   },
   {
@@ -36,7 +32,6 @@ export const barrowsGear = [
     name: "Dharok's Helm",
     droprate: "1/16.5",
     killcount: 0,
-    date: "",
     achieved: false,
   },
   {
@@ -44,7 +39,6 @@ export const barrowsGear = [
     name: "Dharok's Platebody",
     droprate: "1/16.5",
     killcount: 0,
-    date: "",
     achieved: false,
   },
   {
@@ -52,7 +46,6 @@ export const barrowsGear = [
     name: "Dharok's Platelegs",
     droprate: "1/16.5",
     killcount: 0,
-    date: "",
     achieved: false,
   },
   {
@@ -60,7 +53,6 @@ export const barrowsGear = [
     name: "Dharok's Greataxe",
     droprate: "1/16.5",
     killcount: 0,
-    date: "",
     achieved: false,
   },
   {
@@ -68,7 +60,6 @@ export const barrowsGear = [
     name: "Guthan's Helm",
     droprate: "1/16.5",
     killcount: 0,
-    date: "",
     achieved: false,
   },
   {
@@ -76,7 +67,6 @@ export const barrowsGear = [
     name: "Guthan's Platebody",
     droprate: "1/16.5",
     killcount: 0,
-    date: "",
     achieved: false,
   },
   {
@@ -84,7 +74,6 @@ export const barrowsGear = [
     name: "Guthan's Chainskirt",
     droprate: "1/16.5",
     killcount: 0,
-    date: "",
     achieved: false,
   },
   {
@@ -92,7 +81,6 @@ export const barrowsGear = [
     name: "Guthan's Warspear",
     droprate: "1/16.5",
     killcount: 0,
-    date: "",
     achieved: false,
   },
   {
@@ -100,7 +88,6 @@ export const barrowsGear = [
     name: "Karil's Coif",
     droprate: "1/16.5",
     killcount: 0,
-    date: "",
     achieved: false,
   },
   {
@@ -108,7 +95,6 @@ export const barrowsGear = [
     name: "Karil's Leathertop",
     droprate: "1/16.5",
     killcount: 0,
-    date: "",
     achieved: false,
   },
   {
@@ -116,7 +102,6 @@ export const barrowsGear = [
     name: "Karil's Leatherskirt",
     droprate: "1/16.5",
     killcount: 0,
-    date: "",
     achieved: false,
   },
   {
@@ -124,7 +109,6 @@ export const barrowsGear = [
     name: "Karil's Crossbow",
     droprate: "1/16.5",
     killcount: 0,
-    date: "",
     achieved: false,
   },
   {
@@ -132,7 +116,6 @@ export const barrowsGear = [
     name: "Torag's Helm",
     droprate: "1/16.5",
     killcount: 0,
-    date: "",
     achieved: false,
   },
   {
@@ -140,7 +123,6 @@ export const barrowsGear = [
     name: "Torag's Platebody",
     droprate: "1/16.5",
     killcount: 0,
-    date: "",
     achieved: false,
   },
   {
@@ -148,7 +130,6 @@ export const barrowsGear = [
     name: "Torag's Platelegs",
     droprate: "1/16.5",
     killcount: 0,
-    date: "",
     achieved: false,
   },
   {
@@ -156,7 +137,6 @@ export const barrowsGear = [
     name: "Torag's Hammers",
     droprate: "1/16.5",
     killcount: 0,
-    date: "",
     achieved: false,
   },
   {
@@ -164,7 +144,6 @@ export const barrowsGear = [
     name: "Verac's Helm",
     droprate: "1/16.5",
     killcount: 0,
-    date: "",
     achieved: false,
   },
   {
@@ -172,7 +151,6 @@ export const barrowsGear = [
     name: "Verac's Brassard",
     droprate: "1/16.5",
     killcount: 0,
-    date: "",
     achieved: false,
   },
   {
@@ -180,7 +158,6 @@ export const barrowsGear = [
     name: "Verac's Plateskirt",
     droprate: "1/16.5",
     killcount: 0,
-    date: "",
     achieved: false,
   },
   {
@@ -188,7 +165,6 @@ export const barrowsGear = [
     name: "Verac's Flail",
     droprate: "1/16.5",
     killcount: 0,
-    date: "",
     achieved: false,
   },
 ];

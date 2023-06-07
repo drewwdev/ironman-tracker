@@ -1,8 +1,7 @@
-export type barrowsGearType = {
+export type gearType = {
   id: number;
   name: string;
   droprate: string;
   killcount: number;
-  date: string;
   achieved: boolean;
 };
