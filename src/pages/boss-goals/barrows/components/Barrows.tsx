@@ -1,5 +1,5 @@
 import { loot } from "../data";
-import GetGear from "../../../hooks/GetGear";
+import GetGear from "../../../components/GetGear";
 
 export default function Barrows() {
   return (

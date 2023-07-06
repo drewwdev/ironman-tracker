@@ -1,30 +1,11 @@
-import { useEffect, useState } from "react";
-import { BASE_URL } from "../../../constants";
+import { useState } from "react";
+import { PlayerData } from "../../../types/playerData";
+import GetPlayer from "../../../api/GetPlayer";
 
 function SkillsOverview() {
-  const [player, setPlayer] = useState({
-    combatLevel: 0,
-    displayName: "",
-    id: 0,
-    latestSnapshot: {
-      data: {
-        skills: {
-          skillName: {
-            metric: "",
-            experience: 0,
-            rank: 0,
-            level: 0,
-          },
-        },
-      },
-    },
-  });
+  const [player, setPlayer] = useState<PlayerData | null>(null);
 
-  useEffect(() => {
-    fetch(`${BASE_URL}/players/misawakawada`)
-      .then((res) => res.json())
-      .then((data) => setPlayer(data));
-  }, []);
+  GetPlayer("misawakawada", setPlayer);
 
   return (
     <table className="m-6 border-2 bg-zinc-700">
@@ -37,16 +18,15 @@ function SkillsOverview() {
         </tr>
       </thead>
       <tbody>
-        {Object.entries(player.latestSnapshot.data.skills).map(
-          ([skillName, skill]) => (
+        {player &&
+          Object.entries(player.skills).map(([skillName, skill]) => (
             <tr key={skillName}>
-              <td>{skillName.charAt(0).toUpperCase() + skillName.slice(1)}</td>
+              <td>{skillName}</td>
               <td>{skill.level}</td>
-              <td>{skill.experience.toLocaleString("en-US")}</td>
-              <td>{skill.rank.toLocaleString("en-US")}</td>
+              <td>{skill.xp}</td>
+              <td>{skill.rank}</td>
             </tr>
-          )
-        )}
+          ))}
       </tbody>
     </table>
   );

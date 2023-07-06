@@ -1,4 +1,4 @@
-import GetGear from "../../../hooks/GetGear";
+import GetGear from "../../../components/GetGear";
 import { loot } from "../data";
 
 export default function DagannothKings() {

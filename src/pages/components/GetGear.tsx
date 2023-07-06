@@ -1,35 +1,16 @@
 import { useEffect, useState } from "react";
-import { BASE_URL, PLAYER_NAME } from "../../constants";
 import { gearType } from "../boss-goals/model";
+import { playerType } from "../../models/model";
 
 interface GetGearProps {
   loot: gearType[];
 }
 
-export default function GetGear({ loot }: GetGearProps) {
-  const [player, setPlayer] = useState({
-    combatLevel: 0,
-    displayName: "",
-    id: 0,
-    latestSnapshot: {
-      data: {
-        bosses: {
-          bossName: {
-            metric: "",
-            kills: 0,
-            rank: 0,
-          },
-        },
-      },
-    },
-  });
-
-  useEffect(() => {
-    fetch(`${BASE_URL}/players/${PLAYER_NAME}`)
-      .then((res) => res.json())
-      .then((data) => setPlayer(data));
-  }, []);
-
+export default function GetGear(
+  { loot }: GetGearProps,
+  playerData: playerType
+) {
+  const [player, setPlayer] = useState<playerType>(playerData);
   const [gearState, setGearState] = useState<gearType[]>(loot);
 
   const handleCheckbox = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -39,15 +20,15 @@ export default function GetGear({ loot }: GetGearProps) {
     newGear[index].achieved = !newGear[index].achieved;
     setGearState(newGear);
     localStorage.setItem(
-      `${player.latestSnapshot.data.bosses.bossName}`,
+      JSON.stringify(
+        playerData[index].latestSnapshot.data.bosses.barrows_chests
+      ),
       JSON.stringify(newGear)
     );
   };
 
   useEffect(() => {
-    const data = localStorage.getItem(
-      `${player.latestSnapshot.data.bosses.bossName}`
-    );
+    const data = localStorage.getItem("bossData");
     if (data) {
       setGearState(JSON.parse(data));
     }
@@ -59,7 +40,7 @@ export default function GetGear({ loot }: GetGearProps) {
         <tr key={gear.id}>
           <td className="px-4">{gear.name}</td>
           <td className="px-4">{gear.droprate}</td>
-          <td className="px-4">{gear.killcount}</td>
+          <td className="px-4">{}</td>
           <td className="px-4">
             <input
               type="checkbox"
