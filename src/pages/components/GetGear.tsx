@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { gearType } from "../boss-goals/model";
-import { playerType } from "../../models/model";
+import { playerType } from "../../types/playerType";
 
 interface GetGearProps {
   loot: gearType[];

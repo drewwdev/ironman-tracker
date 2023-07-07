@@ -11,7 +11,7 @@ import Zulrah from "./zulrah/components/Zulrah";
 
 function BossGoals() {
   return (
-    <div className="flex flex-wrap">
+    <div className="flex flex-wrap justify-center">
       <Barrows />
       <DagannothKings />
       <Sarachnis />

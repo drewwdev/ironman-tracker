@@ -3,13 +3,9 @@ import SkillsOverview from "./components/SkillsOverview";
 
 function Overview() {
   return (
-    <section className="flex">
-      <div className="">
-        <SkillsOverview />
-      </div>
-      <div className="">
-        <MinigameAndBoss />
-      </div>
+    <section className="flex flex-wrap justify-center">
+      <SkillsOverview />
+      <MinigameAndBoss />
     </section>
   );
 }

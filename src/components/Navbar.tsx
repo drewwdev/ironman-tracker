@@ -1,16 +1,16 @@
 import { Link } from "react-router-dom";
 
 const navbarItems = [
-  { text: "Overview", path: "/Overview" },
-  { text: "General Progression Goals", path: "/GeneralProgressionGoals" },
-  { text: "Equipment Checklist", path: "/EquipmentChecklist" },
-  { text: "Boss Goals", path: "/BossGoals" },
-  { text: "Skill Goals", path: "/SkillGoals" },
-  { text: "Pets", path: "/Pets" },
-  { text: "Diary Goals", path: "/DiaryGoals" },
-  { text: "Clue Scrolls", path: "/ClueScrolls" },
-  { text: "Non-tradeables & Rare Drops", path: "/NonTradeablesRareDrops" },
-  { text: "Highscore Data", path: "/HighscoreData" },
+  { text: "Overview", path: "/overview" },
+  { text: "General Progression Goals", path: "/general-progression-goals" },
+  { text: "Equipment Checklist", path: "/equipment-checklist" },
+  { text: "Boss Goals", path: "/boss-goals" },
+  { text: "Skill Goals", path: "/skill-goals" },
+  { text: "Pets", path: "/pets" },
+  { text: "Diary Goals", path: "/diary-goals" },
+  { text: "Clue Scrolls", path: "/clue-scrolls" },
+  { text: "Non-tradeables & Rare Drops", path: "/nontradeables-raredrops" },
+  { text: "Highscore Data", path: "/highscore-data" },
 ];
 
 function Navbar() {

@@ -1,4 +1,4 @@
-export type PlayerData = {
+export type PlayerDataType = {
   skills: {
     [skillName: string]: {
       id: number;

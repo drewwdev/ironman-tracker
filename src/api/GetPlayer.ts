@@ -1,15 +1,15 @@
 import { Dispatch, SetStateAction, useEffect } from "react";
-import { PlayerData } from "../types/playerData";
+import { PlayerDataType } from "../types/playerDataType";
 
 function FetchData(
   name: string,
-  setPlayer: Dispatch<SetStateAction<PlayerData | null>>
+  setPlayer: Dispatch<SetStateAction<PlayerDataType | null>>
 ) {
   const url = `https://secure.runescape.com/m=hiscore_oldschool/index_lite.ws?player=${name}`;
 
   useEffect(() => {
     async function GetData() {
-      const playerData: PlayerData = {
+      const playerData: PlayerDataType = {
         skills: {},
       };
 

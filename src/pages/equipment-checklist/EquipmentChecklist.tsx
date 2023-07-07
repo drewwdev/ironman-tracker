@@ -4,7 +4,7 @@ import RangeTable from "./Range/components/RangeTable";
 
 function EquipmentChecklist() {
   return (
-    <div className="flex flex-wrap">
+    <div className="flex flex-wrap justify-center">
       <MeleeTable />
       <MageTable />
       <RangeTable />

@@ -5,18 +5,23 @@ import EquipmentChecklist from "./pages/equipment-checklist/EquipmentChecklist";
 import Overview from "./pages/overview/Overview";
 import GeneralProgressionGoals from "./pages/general-progression-goals/GeneralProgressionGoals";
 import BossGoals from "./pages/boss-goals/BossGoals";
+import { navbarItems } from "./data/navbarItems";
+
 function App() {
   return (
     <div className="flex">
       <Navbar />
       <Routes>
-        <Route path="/EquipmentChecklist" element={<EquipmentChecklist />} />
-        <Route path="/Overview" element={<Overview />} />
         <Route
-          path="/GeneralProgressionGoals"
+          path={navbarItems.equipmentChecklist.path}
+          element={<EquipmentChecklist />}
+        />
+        <Route path={navbarItems.overview.path} element={<Overview />} />
+        <Route
+          path={navbarItems.generalProgressionGoals.path}
           element={<GeneralProgressionGoals />}
         />
-        <Route path="/BossGoals" element={<BossGoals />} />
+        <Route path={navbarItems.bossGoals.path} element={<BossGoals />} />
       </Routes>
     </div>
   );

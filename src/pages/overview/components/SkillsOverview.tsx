@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { PlayerData } from "../../../types/playerData";
+import { PlayerDataType } from "../../../types/playerDataType";
 import GetPlayer from "../../../api/GetPlayer";
 
 function SkillsOverview() {
-  const [player, setPlayer] = useState<PlayerData | null>(null);
+  const [player, setPlayer] = useState<PlayerDataType | null>(null);
 
   GetPlayer("misawakawada", setPlayer);
 
