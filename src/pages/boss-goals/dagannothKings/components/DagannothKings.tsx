@@ -3,13 +3,13 @@ import { loot } from "../data";
 
 export default function DagannothKings() {
   return (
-    <table className="m-6 border-2 bg-zinc-700">
+    <table className="m-5 text-black bg-white rounded-lg">
       <thead>
         <tr>
-          <th>Dagannoth Kings</th>
-          <th>Droprate</th>
-          <th>Killcount</th>
-          <th>Achieved</th>
+          <th className="p-4 text-left">Dagannoth Kings</th>
+          <th className="p-4 text-left">Droprate</th>
+          <th className="p-4 text-left">Killcount</th>
+          <th className="p-4 text-left">Achieved</th>
         </tr>
       </thead>
       <tbody>

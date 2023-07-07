@@ -6,7 +6,7 @@ import MediumGoals from "./components/MediumGoals/MediumGoals";
 
 function GeneralProgressionGoals() {
   return (
-    <div className="flex pt-24">
+    <div className="flex flex-wrap">
       <EasyGoals />
       <MediumGoals />
       <HardGoals />

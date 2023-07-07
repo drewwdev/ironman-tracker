@@ -34,7 +34,7 @@ function HardGoals() {
   };
 
   return (
-    <div className="m-6 border-2 bg-zinc-700">
+    <div className="m-5 text-black bg-white rounded-lg h-min">
       <h1 className="text-2xl font-bold text-center">Hard Goals</h1>
       <h2 className="text-xl font-bold text-center">
         {percentageOfhardGoalsAchieved()}% Completed
@@ -42,15 +42,15 @@ function HardGoals() {
       <table>
         <thead>
           <tr>
-            <th>Goals</th>
-            <th>Achieved?</th>
+            <th className="p-4 text-left">Goals</th>
+            <th className="p-4 text-left">Achieved?</th>
           </tr>
         </thead>
         <tbody>
           {goals.map((goal: GoalType) => (
             <tr key={goal.name}>
-              <td>{goal.name}</td>
-              <td>
+              <td className="px-4 py-2">{goal.name}</td>
+              <td className="px-4 py-2">
                 <input
                   type="checkbox"
                   id={goal.id.toString()}

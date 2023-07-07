@@ -33,13 +33,12 @@ function SingleMageEquipment() {
     <tbody>
       {mageEquipment.map((mageEquipment: EquipmentType) => (
         <tr key={mageEquipment.id}>
-          <td className="flex justify-center px-4">
+          <td className="px-4">
             <img src={mageEquipment.image} />
           </td>
           <td className="px-4">{mageEquipment.tier}</td>
           <td className="px-4">
             <a
-              className="font-medium text-slate-200 hover:text-slate-200 hover:underline"
               href={`https://oldschool.runescape.wiki/w/${
                 mageEquipmentNameSlug[mageEquipment.id - 1]
               }`}

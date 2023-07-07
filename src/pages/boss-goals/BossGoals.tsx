@@ -11,23 +11,17 @@ import Zulrah from "./zulrah/components/Zulrah";
 
 function BossGoals() {
   return (
-    <div className="flex">
-      <div className="flex flex-col pt-24">
-        <Barrows />
-        <DagannothKings />
-        <Sarachnis />
-      </div>
-      <div className="flex flex-col pt-24">
-        <Zulrah />
-        <Kreearra />
-        <CommanderZilyana />
-        <GeneralGraardor />
-      </div>
-      <div className="flex flex-col pt-24">
-        <KrilTsutsaroth />
-        <CorporealBeast />
-        <Nex />
-      </div>
+    <div className="flex flex-wrap">
+      <Barrows />
+      <DagannothKings />
+      <Sarachnis />
+      <Zulrah />
+      <Kreearra />
+      <CommanderZilyana />
+      <GeneralGraardor />
+      <KrilTsutsaroth />
+      <CorporealBeast />
+      <Nex />
     </div>
   );
 }

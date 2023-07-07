@@ -3,11 +3,11 @@ import SkillsOverview from "./components/SkillsOverview";
 
 function Overview() {
   return (
-    <section className="flex pt-24">
-      <div className="p-10">
+    <section className="flex">
+      <div className="">
         <SkillsOverview />
       </div>
-      <div className="p-10">
+      <div className="">
         <MinigameAndBoss />
       </div>
     </section>

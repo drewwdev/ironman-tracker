@@ -10,7 +10,6 @@ export default function GetGear(
   { loot }: GetGearProps,
   playerData: playerType
 ) {
-  const [player, setPlayer] = useState<playerType>(playerData);
   const [gearState, setGearState] = useState<gearType[]>(loot);
 
   const handleCheckbox = (e: React.ChangeEvent<HTMLInputElement>) => {

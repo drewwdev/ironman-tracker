@@ -45,12 +45,12 @@ function MinigameAndBoss() {
   };
 
   return (
-    <table className="m-6 border-2 bg-zinc-700">
+    <table className="m-5 text-black bg-white rounded-lg">
       <thead>
         <tr>
-          <th>Minigame / Boss</th>
-          <th>Kills</th>
-          <th>Rank</th>
+          <th className="p-4 text-left">Minigame / Boss</th>
+          <th className="p-4 text-left">Kills</th>
+          <th className="p-4 text-left">Rank</th>
         </tr>
       </thead>
       <tbody>
@@ -59,9 +59,11 @@ function MinigameAndBoss() {
           .sort((a, b) => b[1].kills - a[1].kills)
           .map(([bossName, boss]) => (
             <tr key={bossName}>
-              <td>{formatName(bossName)}</td>
-              <td>{boss.kills === -1 ? 0 : boss.kills}</td>
-              <td>
+              <td className="px-4 py-2">{formatName(bossName)}</td>
+              <td className="px-4 py-2">
+                {boss.kills === -1 ? 0 : boss.kills}
+              </td>
+              <td className="px-4 py-2">
                 {(boss.rank === -1 ? 0 : boss.rank).toLocaleString("en-US")}
               </td>
             </tr>
@@ -75,9 +77,11 @@ function MinigameAndBoss() {
 
             return (
               <tr key={activityName}>
-                <td>{formatName(activityName)}</td>
-                <td>{activity.score === -1 ? 0 : activity.score}</td>
-                <td>
+                <td className="px-4 py-2">{formatName(activityName)}</td>
+                <td className="px-4 py-2">
+                  {activity.score === -1 ? 0 : activity.score}
+                </td>
+                <td className="px-4 py-2">
                   {(activity.rank === -1 ? 0 : activity.rank).toLocaleString(
                     "en-US"
                   )}

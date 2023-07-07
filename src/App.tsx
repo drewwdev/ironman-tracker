@@ -7,20 +7,18 @@ import GeneralProgressionGoals from "./pages/general-progression-goals/GeneralPr
 import BossGoals from "./pages/boss-goals/BossGoals";
 function App() {
   return (
-    <>
-      <div className="flex flex-col">
-        <Navbar />
-        <Routes>
-          <Route path="/EquipmentChecklist" element={<EquipmentChecklist />} />
-          <Route path="/Overview" element={<Overview />} />
-          <Route
-            path="/GeneralProgressionGoals"
-            element={<GeneralProgressionGoals />}
-          />
-          <Route path="/BossGoals" element={<BossGoals />} />
-        </Routes>
-      </div>
-    </>
+    <div className="flex">
+      <Navbar />
+      <Routes>
+        <Route path="/EquipmentChecklist" element={<EquipmentChecklist />} />
+        <Route path="/Overview" element={<Overview />} />
+        <Route
+          path="/GeneralProgressionGoals"
+          element={<GeneralProgressionGoals />}
+        />
+        <Route path="/BossGoals" element={<BossGoals />} />
+      </Routes>
+    </div>
   );
 }
 
