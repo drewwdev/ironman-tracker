@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import mageEquipment from "./data";
+import mageEquipment from "../data";
 import { EquipmentType } from "../../model";
 
 function SingleMageEquipment() {

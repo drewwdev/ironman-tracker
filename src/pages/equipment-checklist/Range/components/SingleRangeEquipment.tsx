@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import rangeEquipment from "./data";
+import rangeEquipment from "../data";
 import { EquipmentType } from "../../model";
 
 function SingleRangeEquipment() {

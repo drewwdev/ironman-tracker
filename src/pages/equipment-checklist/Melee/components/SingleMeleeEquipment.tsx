@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import meleeEquipment from "./data";
+import meleeEquipment from "../data";
 import { EquipmentType } from "../../model";
 
 function SingleMeleeEquipment() {

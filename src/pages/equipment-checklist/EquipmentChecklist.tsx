@@ -1,6 +1,6 @@
-import MageTable from "./components/Mage/MageTable";
-import MeleeTable from "./components/Melee/MeleeTable";
-import RangeTable from "./components//Range/RangeTable";
+import MageTable from "./Mage/components/MageTable";
+import MeleeTable from "./Melee/components/MeleeTable";
+import RangeTable from "./Range/components/RangeTable";
 
 function EquipmentChecklist() {
   return (

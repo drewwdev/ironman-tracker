@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { goals } from "./data";
+import { goals } from "../data";
 import { GoalType } from "../../model";
 
 function EasyGoals() {
