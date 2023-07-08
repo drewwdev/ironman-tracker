@@ -1,5 +1,5 @@
 import { loot } from "../data";
-import GetGear from "../../../components/GetGear";
+import GetGear from "../../GetGear";
 
 export default function Nex() {
   return (

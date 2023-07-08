@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { gearType } from "../boss-goals/model";
+import { gearType } from "./gearType";
 import { playerType } from "../../types/playerType";
 
 interface GetGearProps {
@@ -39,7 +39,7 @@ export default function GetGear(
         <tr key={gear.id}>
           <td className="px-4">{gear.name}</td>
           <td className="px-4">{gear.droprate}</td>
-          <td className="px-4">{}</td>
+          <td className="px-4">{gear.killcount}</td>
           <td className="px-4">
             <input
               type="checkbox"
