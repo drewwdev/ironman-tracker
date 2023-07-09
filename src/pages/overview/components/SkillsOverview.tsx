@@ -18,7 +18,7 @@ function SkillsOverview() {
       if (response.ok) {
         const text = await response.text();
         const data = JSON.parse(text);
-        setSkills(data);
+        setSkills(data.main.skills);
       } else {
         console.error("Error fetching data:", response.statusText);
       }
@@ -30,7 +30,7 @@ function SkillsOverview() {
   const renderSkills = () => {
     if (!skills) return null;
 
-    return Object.entries(skills.main.skills).map(([skill, skillData]) => (
+    return Object.entries(skills).map(([skill, skillData]) => (
       <tr key={skill}>
         <td className="p-4 text-left">{skill}</td>
         <td className="p-4 text-left">{skillData.level}</td>

@@ -1,47 +1,80 @@
+import { Activity, Player } from "osrs-json-hiscores";
 import { useEffect, useState } from "react";
-import { BASE_URL } from "../../../constants";
+
+interface ActivityData {
+  name: string;
+  rank: number;
+  score: number;
+}
 
 function MinigameAndBoss() {
-  const [player, setPlayer] = useState({
-    combatLevel: 0,
-    displayName: "",
-    id: 0,
-    latestSnapshot: {
-      data: {
-        activities: {
-          activityName: {
-            metric: "",
-            score: 0,
-            rank: 0,
-          },
-        },
-        bosses: {
-          bossName: {
-            metric: "",
-            kills: 0,
-            rank: 0,
-          },
-        },
-      },
-    },
-  });
+  const [player, setPlayer] = useState<Player | null>(null);
 
   useEffect(() => {
-    fetch(`${BASE_URL}/players/misawakawada`)
-      .then((res) => res.json())
-      .then((data) => setPlayer(data));
+    const fetchData = async () => {
+      const response = await fetch("http://localhost:3000/stats/misawakawada");
+
+      if (response.ok) {
+        const data = await response.json();
+        setPlayer(data);
+      } else {
+        console.error("Error fetching data:", response.statusText);
+      }
+    };
+
+    fetchData();
   }, []);
 
-  const formatName = (name: string) => {
-    return name
-      .split("_")
-      .map((word) => {
-        if (word.toLowerCase() === "of" || word.toLowerCase() === "the") {
-          return word.toLowerCase();
-        }
-        return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
-      })
-      .join(" ");
+  const renderActivity = () => {
+    if (!player || !player.main) return null;
+
+    const { skills, bosses, bountyHunter, clues, ...activities } = player.main;
+
+    const bountyHunterActivities: ActivityData[] = Object.entries(
+      bountyHunter
+    ).map(([activityName, activityData]) => {
+      const { rank, score } = activityData as Activity;
+      return {
+        name: activityName,
+        rank,
+        score,
+      };
+    });
+
+    const clueActivities: ActivityData[] = Object.entries(clues).map(
+      ([type, activityData]) => {
+        const { rank, score } = activityData as Activity;
+        return {
+          name: type,
+          rank,
+          score,
+        };
+      }
+    );
+
+    const combinedActivities: ActivityData[] = [
+      ...Object.entries(activities).map(([activityName, activityData]) => {
+        return {
+          name: activityName,
+          rank: activityData.rank,
+          score: activityData.score,
+        };
+      }),
+      ...bountyHunterActivities,
+      ...clueActivities,
+    ];
+
+    return combinedActivities.map((activityData) => {
+      const { name, rank, score } = activityData;
+
+      return (
+        <tr key={name}>
+          <td className="p-4 text-left">{name}</td>
+          <td className="p-4 text-left">{score === -1 ? 0 : score}</td>
+          <td className="p-4 text-left">{rank === -1 ? 0 : rank}</td>
+        </tr>
+      );
+    });
   };
 
   return (
@@ -49,47 +82,11 @@ function MinigameAndBoss() {
       <thead>
         <tr>
           <th className="p-4 text-left">Minigame / Boss</th>
-          <th className="p-4 text-left">Kills</th>
+          <th className="p-4 text-left">Score</th>
           <th className="p-4 text-left">Rank</th>
         </tr>
       </thead>
-      <tbody>
-        {Object.entries(player.latestSnapshot.data.bosses)
-          .filter(([bossName, boss]) => boss.kills > 0)
-          .sort((a, b) => b[1].kills - a[1].kills)
-          .map(([bossName, boss]) => (
-            <tr key={bossName}>
-              <td className="px-4 py-2">{formatName(bossName)}</td>
-              <td className="px-4 py-2">
-                {boss.kills === -1 ? 0 : boss.kills}
-              </td>
-              <td className="px-4 py-2">
-                {(boss.rank === -1 ? 0 : boss.rank).toLocaleString("en-US")}
-              </td>
-            </tr>
-          ))}
-
-        {Object.entries(player.latestSnapshot.data.activities)
-          .filter(([activityName, activity]) => activity.score > 0)
-          .sort((a, b) => b[1].score - a[1].score)
-          .map(([activityName, activity]) => {
-            formatName(activityName);
-
-            return (
-              <tr key={activityName}>
-                <td className="px-4 py-2">{formatName(activityName)}</td>
-                <td className="px-4 py-2">
-                  {activity.score === -1 ? 0 : activity.score}
-                </td>
-                <td className="px-4 py-2">
-                  {(activity.rank === -1 ? 0 : activity.rank).toLocaleString(
-                    "en-US"
-                  )}
-                </td>
-              </tr>
-            );
-          })}
-      </tbody>
+      <tbody>{renderActivity()}</tbody>
     </table>
   );
 }
