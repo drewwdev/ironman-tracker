@@ -7,7 +7,7 @@
 
 The Old School RuneScape Ironman Tracker is a web application built to track the progress of Ironman accounts in Old School RuneScape. It allows Ironman players to monitor their skill levels, achievements, and other statistics in their journey towards becoming self-sufficient adventurers.
 
-The web app is developed using TypeScript and utilizes Tailwind CSS for the frontend UI. Data is retrieved from the Wise Old Man API, which provides comprehensive data on Old School RuneScape player stats and achievements.
+The web app is developed using TypeScript and utilizes Tailwind CSS for the frontend UI. Data is retrieved from the Wise Old Man API, and the Official Old School Runescape Highscores which provides comprehensive data on Old School RuneScape player stats and achievements.
 
 This project was inspired by a Reddit thread in the Ironscape community, which you can find here: [Ironscape Reddit Thread](https://www.reddit.com/r/ironscape/comments/12zrf12/i_have_been_working_on_a_huge_goals_and/).
 
@@ -23,7 +23,7 @@ This project was inspired by a Reddit thread in the Ironscape community, which y
 1. Clone the repository:
 
 ```shell
-git clone https://github.com/your-username/osrs-ironman-tracker.git
+git clone https://github.com/drewwdev/osrs-ironman-tracker.git
 ````
 
 2. Navigate to the project directory:
@@ -49,7 +49,34 @@ npm install
 npm start
 ```
 
-6. Open your browser and visit `http://localhost:3000` to access the web app.
+6. Open your browser and visit `http://localhost:5173` to access the web app.
+
+7. Set up the Express API:
+
+   - Navigate to the `api` directory:
+
+     ```shell
+     cd api
+     ```
+
+   - Install the API dependencies:
+
+     ```shell
+     npm install
+     ```
+
+   - Set up environment variables:
+
+     - Create a `.env` file in the `api` directory.
+     - Add the necessary environment variables for the API.
+
+   - Start the Express server:
+
+     ```shell
+     npm start
+     ```
+
+   - The API will be accessible at `http://localhost:3000`.
 
 ## Usage
 
@@ -70,8 +97,8 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 - Wise Old Man API: [https://docs.wiseoldman.net/](https://docs.wiseoldman.net/)
 - Ironscape Reddit Thread: [https://www.reddit.com/r/ironscape/comments/12zrf12/i_have_been_working_on_a_huge_goals_and/](https://www.reddit.com/r/ironscape/comments/12zrf12/i_have_been_working_on_a_huge_goals_and/)
+- osrs-json-hiscores: [https://github.com/maxswa/osrs-json-hiscores](https://github.com/maxswa/osrs-json-hiscores)
 
 ```
 
-Feel free to customize this README file according to your specific project needs.
 ```
