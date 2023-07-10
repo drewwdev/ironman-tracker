@@ -75,26 +75,6 @@ const BossComponent: FC<BossProps> = ({ bossName, loot }) => {
     localStorage.setItem(localStorageKey, JSON.stringify(updatedLootItems));
   };
 
-  const renderBoss = () => {
-    if (!boss) return null;
-
-    return lootItems.map((item) => (
-      <tr key={item.id}>
-        <td className="p-4">{item.name}</td>
-        <td className="p-4">{item.droprate}</td>
-        <td className="p-4">{boss.score === -1 ? 0 : boss.score}</td>
-        <td className="px-4">
-          <input
-            type="checkbox"
-            id={item.id.toString()}
-            checked={item.achieved}
-            onChange={() => handleCheckboxChange(item.id)}
-          />
-        </td>
-      </tr>
-    ));
-  };
-
   return (
     <table className="m-5 text-black bg-white rounded-lg">
       <thead>
@@ -105,7 +85,25 @@ const BossComponent: FC<BossProps> = ({ bossName, loot }) => {
           <th className="p-4 text-left">Achieved</th>
         </tr>
       </thead>
-      <tbody>{renderBoss()}</tbody>
+      <tbody>
+        {!boss
+          ? null
+          : lootItems.map((item) => (
+              <tr key={item.id}>
+                <td className="p-4">{item.name}</td>
+                <td className="p-4">{item.droprate}</td>
+                <td className="p-4">{boss.score === -1 ? 0 : boss.score}</td>
+                <td className="px-4">
+                  <input
+                    type="checkbox"
+                    id={item.id.toString()}
+                    checked={item.achieved}
+                    onChange={() => handleCheckboxChange(item.id)}
+                  />
+                </td>
+              </tr>
+            ))}
+      </tbody>
     </table>
   );
 };
